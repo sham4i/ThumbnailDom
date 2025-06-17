@@ -1,4 +1,3 @@
-
 export interface ThumbnailData {
   id: number;
   title: string;
@@ -46,7 +45,7 @@ export const thumbnailsData: ThumbnailData[] = [
     title: "The Secret to Viral TikTok Content (Revealed)",
     views: "2.3M views",
     duration: "10:18",
-    imageUrl: "/thumbnails/Thumbnail 53.jpg,
+    imageUrl: "/thumbnails/Thumbnail 53.jpg",
     size: "w-68 h-38",
     niche: "SMM",
     ctr: "+300%",
