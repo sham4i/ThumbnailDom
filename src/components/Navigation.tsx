@@ -2,12 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Navigation = () => {
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -21,7 +22,7 @@ const Navigation = () => {
     if (location.pathname === "/") {
       scrollToSection('services');
     } else {
-      window.location.href = "/work-with-us";
+      navigate("/work-with-us");
     }
     setIsMobileMenuOpen(false);
   };
