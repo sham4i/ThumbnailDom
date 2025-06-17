@@ -166,7 +166,7 @@ export const thumbnailsData: ThumbnailData[] = [
     title: "The Math Trick That Will Change Your Life",
     views: "890K views",
     duration: "8:33",
-    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/thumbnails/Thumbnail 6",
     size: "w-56 h-32",
     niche: "Educational",
     ctr: "+195%",
