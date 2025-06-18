@@ -27,8 +27,14 @@ export function useCheckout() {
       const metadata = getServiceMetadata(serviceType, isAnnual);
 
       const currentUrl = window.location.origin;
-      const successUrl = `${currentUrl}/success?session_id={CHECKOUT_SESSION_ID}`;
-      const cancelUrl = `${currentUrl}/work-with-us?canceled=true`;
+      
+      // Capture the current page path and encode it for safe URL transmission
+      const currentPath = window.location.pathname;
+      const encodedReturnPath = encodeURIComponent(currentPath);
+      
+      // Include the return path in both success and cancel URLs
+      const successUrl = `${currentUrl}/success?session_id={CHECKOUT_SESSION_ID}&return_path=${encodedReturnPath}`;
+      const cancelUrl = `${currentUrl}${currentPath}?canceled=true`;
 
       const { url } = await createCheckoutSession({
         priceId,

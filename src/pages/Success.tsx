@@ -30,9 +30,38 @@ interface OrderDetails {
 const Success = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
+  const returnPath = searchParams.get('return_path');
   const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Decode the return path and validate it
+  const getReturnPath = () => {
+    if (!returnPath) return '/';
+    
+    try {
+      const decodedPath = decodeURIComponent(returnPath);
+      // Basic validation to ensure it's a valid internal path
+      if (decodedPath.startsWith('/') && !decodedPath.includes('//')) {
+        return decodedPath;
+      }
+    } catch (error) {
+      console.warn('Invalid return path:', returnPath);
+    }
+    
+    return '/';
+  };
+
+  const finalReturnPath = getReturnPath();
+
+  // Determine appropriate button text based on return path
+  const getReturnButtonText = () => {
+    if (finalReturnPath === '/') return 'Return to Home';
+    if (finalReturnPath.includes('/service/')) return 'Return to Service Page';
+    if (finalReturnPath.includes('/work-with-us')) return 'Return to Plans';
+    if (finalReturnPath.includes('/portfolio')) return 'Return to Portfolio';
+    return 'Continue Browsing';
+  };
 
   useEffect(() => {
     const fetchOrderDetails = async () => {
@@ -164,10 +193,10 @@ const Success = () => {
               </Button>
               <div>
                 <Link 
-                  to="/" 
+                  to={finalReturnPath}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Return to Home
+                  {getReturnButtonText()}
                 </Link>
               </div>
             </div>
@@ -277,16 +306,16 @@ const Success = () => {
 
           <div className="text-center mt-8 space-y-4">
             <Button size="lg" asChild>
-              <Link to="/portfolio">
-                View Our Portfolio <ArrowRight className="ml-2 h-4 w-4" />
+              <Link to={finalReturnPath}>
+                {getReturnButtonText()} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <div>
               <Link 
-                to="/" 
+                to="/portfolio"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                Return to Home
+                View Our Portfolio
               </Link>
             </div>
           </div>
