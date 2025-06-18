@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
@@ -16,10 +15,10 @@ const Index = () => {
       <div className="pt-16"> {/* Add padding-top to account for fixed navigation */}
         <Hero />
         <Portfolio />
-        <Services />
         <HowItWorks />
         <Benefits />
         <Testimonials />
+        <Services />
         <FAQ />
         <Footer />
       </div>

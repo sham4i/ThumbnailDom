@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, Clock, Users, Shield, Zap, Target } from "lucide-react";
 
@@ -7,8 +6,8 @@ const Benefits = () => {
     {
       icon: TrendingUp,
       title: "Proven Results",
-      description: "Our clients see an average 40% increase in click-through rates within the first month.",
-      stat: "40% CTR boost"
+      description: "Our clients see an average 400% increase in click-through rates within the first month.",
+      stat: "400% CTR boost"
     },
     {
       icon: Clock,
@@ -62,7 +61,11 @@ const Benefits = () => {
                   <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                     <benefit.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">
+                  <span className={`text-xs font-bold px-2 py-1 rounded-full ${
+                    benefit.stat === "400% CTR boost" 
+                      ? "text-red-500 bg-red-100 dark:bg-red-900/20" 
+                      : "text-primary bg-primary/10"
+                  }`}>
                     {benefit.stat}
                   </span>
                 </div>
@@ -91,7 +94,7 @@ const Benefits = () => {
               <div className="text-sm text-muted-foreground">Thumbnails Created</div>
             </div>
             <div>
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">40%</div>
+              <div className="text-2xl md:text-3xl font-bold text-red-500 mb-1">400%</div>
               <div className="text-sm text-muted-foreground">Avg CTR Increase</div>
             </div>
             <div>

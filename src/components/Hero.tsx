@@ -70,7 +70,7 @@ const Hero = () => {
           {/* Marquee Creators */}
           <div className="mt-12 pt-8 border-t border-border/50">
             <p className="text-sm text-muted-foreground mb-6">
-              Join creators who've increased their CTR by up to 400%
+              Join creators who've increased their CTR by up to <span className="text-red-500 font-bold">400%</span>
             </p>
             <MarqueeCreators />
           </div>
