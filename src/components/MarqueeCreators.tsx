@@ -1,37 +1,36 @@
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const MarqueeCreators = () => {
   const creators = [
     {
       avatar: "/placeholder.svg",
-      handle: "@TechReviews",
-      subscribers: "250K",
-      initials: "TR"
+      handle: "@Buildapreneur",
+      subscribers: "243K",
+      initials: "BP"
     },
     {
       avatar: "/placeholder.svg", 
-      handle: "@DailyVlogs",
-      subscribers: "180K",
-      initials: "DV"
+      handle: "@JoshRyan",
+      subscribers: "94K",
+      initials: "JR"
     },
     {
       avatar: "/placeholder.svg",
-      handle: "@GameUniverse", 
-      subscribers: "420K",
-      initials: "GU"
+      handle: "@WealthHacks", 
+      subscribers: "58K",
+      initials: "WH"
     },
     {
       avatar: "/placeholder.svg",
-      handle: "@BusinessMindset",
-      subscribers: "95K", 
-      initials: "BM"
+      handle: "@earthcurious",
+      subscribers: "7K", 
+      initials: "EC"
     },
     {
       avatar: "/placeholder.svg",
-      handle: "@CookingMaster",
-      subscribers: "320K",
-      initials: "CM"
+      handle: "@itsjordanle",
+      subscribers: "21K",
+      initials: "JL"
     },
     {
       avatar: "/placeholder.svg",
