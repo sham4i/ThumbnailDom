@@ -7,9 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Check, ArrowRight, Clock, Target, Zap, BarChart3, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCheckout } from "@/hooks/useCheckout";
 
 const ServiceCreatorPro = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const { initiateCheckout, isLoading } = useCheckout();
   
   const basePrice = 247;
   const annualDiscount = 0.1;
@@ -79,6 +81,13 @@ const ServiceCreatorPro = () => {
     }
   ];
 
+  const handleStartCreatingClick = () => {
+    initiateCheckout({
+      serviceType: 'creator-pro',
+      isAnnual: isAnnual,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -132,8 +141,13 @@ const ServiceCreatorPro = () => {
                 </div>
               )}
               
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/contact?service=creator-pro">Start Creating <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4" 
+                onClick={handleStartCreatingClick}
+                disabled={isLoading}
+              >
+                {isLoading ? "Processing..." : "Start Creating"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
@@ -250,8 +264,13 @@ const ServiceCreatorPro = () => {
               Join successful creators who've increased their click-through rates by 40% or more with consistent, professional thumbnail designs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/contact?service=creator-pro">Start Your Pro Journey <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4" 
+                onClick={handleStartCreatingClick}
+                disabled={isLoading}
+              >
+                {isLoading ? "Processing..." : "Start Your Pro Journey"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
                 <Link to="/contact">Schedule Consultation</Link>

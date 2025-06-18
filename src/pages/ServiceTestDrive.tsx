@@ -5,8 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Check, ArrowRight, Clock, Target, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCheckout } from "@/hooks/useCheckout";
 
 const ServiceTestDrive = () => {
+  const { initiateCheckout, isLoading } = useCheckout();
+
   const features = [
     {
       icon: <Target className="h-5 w-5" />,
@@ -44,6 +47,13 @@ const ServiceTestDrive = () => {
     }
   ];
 
+  const handleOrderClick = () => {
+    initiateCheckout({
+      serviceType: 'test-drive',
+      isAnnual: false,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -63,8 +73,13 @@ const ServiceTestDrive = () => {
                 <div className="text-4xl font-bold text-primary">$60</div>
                 <div className="text-muted-foreground">one-time payment</div>
               </div>
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link to="/contact?service=test-drive">Order Now <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4" 
+                onClick={handleOrderClick}
+                disabled={isLoading}
+              >
+                {isLoading ? "Processing..." : "Order Now"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
@@ -153,8 +168,13 @@ const ServiceTestDrive = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join hundreds of creators who've seen dramatic improvements in their click-through rates with our professional thumbnail designs.
             </p>
-            <Button size="lg" className="text-lg px-8 py-4" asChild>
-              <Link to="/contact?service=test-drive">Order Your Thumbnail Now <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-4" 
+              onClick={handleOrderClick}
+              disabled={isLoading}
+            >
+              {isLoading ? "Processing..." : "Order Your Thumbnail Now"} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </section>

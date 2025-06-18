@@ -7,9 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Check, ArrowRight, Clock, Target, Zap, BarChart3, Users, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCheckout } from "@/hooks/useCheckout";
 
 const ServiceCreatorProPlus = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const { initiateCheckout, isLoading } = useCheckout();
   
   const basePrice = 447;
   const annualDiscount = 0.15;
@@ -79,6 +81,13 @@ const ServiceCreatorProPlus = () => {
     }
   ];
 
+  const handleGoPremiumClick = () => {
+    initiateCheckout({
+      serviceType: 'creator-pro-plus',
+      isAnnual: isAnnual,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -132,8 +141,13 @@ const ServiceCreatorProPlus = () => {
                 </div>
               )}
               
-              <Button size="lg" className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700" asChild>
-                <Link to="/contact?service=creator-pro-plus">Go Premium <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700" 
+                onClick={handleGoPremiumClick}
+                disabled={isLoading}
+              >
+                {isLoading ? "Processing..." : "Go Premium"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
@@ -250,8 +264,13 @@ const ServiceCreatorProPlus = () => {
               Join elite creators who've achieved 60%+ increases in click-through rates with our premium thumbnail design and strategic optimization service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700" asChild>
-                <Link to="/contact?service=creator-pro-plus">Start Premium Service <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-4 bg-purple-600 hover:bg-purple-700" 
+                onClick={handleGoPremiumClick}
+                disabled={isLoading}
+              >
+                {isLoading ? "Processing..." : "Start Premium Service"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
                 <Link to="/contact">Schedule Strategy Call</Link>
