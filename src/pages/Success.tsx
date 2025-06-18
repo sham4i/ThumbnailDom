@@ -80,15 +80,13 @@ const Success = () => {
       }
 
       try {
-        // Query the orders table for the matching session ID
+        // Call the new RPC function to fetch order details
         const { data, error: supabaseError } = await supabase
-          .from('orders')
-          .select('*')
-          .eq('stripe_session_id', sessionId)
-          .single(); // Use single() since we expect only one order per session
+          .rpc('get_order_details_by_session_id', { session_id: sessionId })
+          .single(); // Use single() as we expect one result
 
         if (supabaseError) {
-          console.error('Supabase error:', supabaseError);
+          console.error('Supabase RPC error:', supabaseError);
           setError('Failed to fetch order details. Please contact support if this persists.');
           setIsLoading(false);
           return;
