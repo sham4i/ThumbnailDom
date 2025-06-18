@@ -1,6 +1,6 @@
 // Stripe configuration and helper functions
 export const STRIPE_PRICE_IDS = {
-  TEST_DRIVE: 'price_1RawaDGjGTuZA421Jzo0KZ8I', // Replace with actual Stripe price ID
+  TEST_DRIVE: 'price_1RbGDbGjGTuZA421O6m30oGB', // Replace with actual Stripe price ID
   CREATOR_PRO_MONTHLY: 'price_1RawbxGjGTuZA421cdNpCO5f', // Replace with actual Stripe price ID
   CREATOR_PRO_ANNUAL: 'price_1RawbxGjGTuZA4212k6j9q3D', // Replace with actual Stripe price ID (247 * 12 * 0.9)
   CREATOR_PRO_PLUS_MONTHLY: 'price_1RawcnGjGTuZA421VS3uLVxq', // Replace with actual Stripe price ID
