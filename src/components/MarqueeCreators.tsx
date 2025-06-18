@@ -34,8 +34,8 @@ const MarqueeCreators = () => {
     },
     {
       avatar: "/placeholder.svg",
-      handle: "@FitnessJourney",
-      subscribers: "150K",
+      handle: "@mollypelletierrd",
+      subscribers: "61K",
       initials: "FJ"
     }
   ];
