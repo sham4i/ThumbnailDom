@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -61,7 +60,7 @@ const ServiceTestDrive = () => {
                 Perfect for trying our service with one high-converting thumbnail design. See the difference professional design makes for your content.
               </p>
               <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="text-4xl font-bold text-primary">$47</div>
+                <div className="text-4xl font-bold text-primary">$60</div>
                 <div className="text-muted-foreground">one-time payment</div>
               </div>
               <Button size="lg" className="text-lg px-8 py-4" asChild>

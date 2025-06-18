@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
@@ -23,7 +22,7 @@ const Contact = () => {
   const { toast } = useToast();
 
   const services = [
-    { value: "test-drive", label: "Test Drive ($47) - Single Design" },
+    { value: "test-drive", label: "Test Drive ($60) - Single Design" },
     { value: "creator-pro", label: "Creator Pro ($247/month) - 5 Thumbnails" },
     { value: "creator-pro-plus", label: "Creator Pro+ ($447/month) - 10 Thumbnails" },
     { value: "enterprise", label: "Enterprise - Custom Solution" },

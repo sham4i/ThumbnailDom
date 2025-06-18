@@ -17,7 +17,7 @@ const WorkWithUs = () => {
       id: "test-drive",
       name: "Test Drive",
       subtitle: "Single Design",
-      price: 47,
+      price: 60,
       isOneTime: true,
       description: "Perfect for trying our service. One high-converting thumbnail to test the waters.",
       features: [
