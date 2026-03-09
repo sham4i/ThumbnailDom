@@ -1,78 +1,121 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
-import MarqueeCreators from "./MarqueeCreators";
+import { ArrowRight, Play } from "lucide-react";
+import { Link } from "react-router-dom";
+import MarqueeBackground from "./MarqueeBackground";
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const thumbnails = [
+    "/thumbnails/educational-1.jpg",
+    "/thumbnails/educational-2.jpg",
+    "/thumbnails/educational-3.jpg",
+    "/thumbnails/educational-4.jpg",
+    "/thumbnails/educational-5.jpg",
+    "/thumbnails/educational-6.jpg",
+    "/thumbnails/educational-7.jpg",
+    "/thumbnails/tech-1.jpg",
+    "/thumbnails/tech-2.jpg",
+    "/thumbnails/tech-3.jpg",
+    "/thumbnails/tech-4.jpg",
+    "/thumbnails/tech-5.jpg",
+    "/thumbnails/tech-6.jpg",
+    "/thumbnails/tech-7.jpg",
+    "/thumbnails/business-1.jpg",
+    "/thumbnails/business-2.jpg",
+    "/thumbnails/business-3.jpg",
+    "/thumbnails/business-4.jpg",
+    "/thumbnails/business-5.jpg",
+    "/thumbnails/business-6.jpg",
+    "/thumbnails/business-7.jpg",
+    "/thumbnails/gaming-1.jpg",
+    "/thumbnails/gaming-2.jpg",
+    "/thumbnails/gaming-3.jpg",
+    "/thumbnails/gaming-4.jpg",
+    "/thumbnails/gaming-5.jpg",
+    "/thumbnails/gaming-6.jpg",
+    "/thumbnails/gaming-7.jpg",
+    "/thumbnails/lifestyle-1.jpg",
+    "/thumbnails/lifestyle-2.jpg",
+    "/thumbnails/lifestyle-3.jpg",
+    "/thumbnails/lifestyle-4.jpg",
+    "/thumbnails/lifestyle-5.jpg",
+    "/thumbnails/lifestyle-6.jpg",
+    "/thumbnails/lifestyle-7.jpg",
+    "/thumbnails/documentary-1.jpg",
+    "/thumbnails/documentary-2.jpg",
+    "/thumbnails/documentary-3.jpg",
+    "/thumbnails/documentary-4.jpg",
+    "/thumbnails/documentary-5.jpg",
+    "/thumbnails/documentary-6.jpg",
+    "/thumbnails/documentary-7.jpg",
+    "/thumbnails/vlog-1.jpg",
+    "/thumbnails/vlog-2.jpg",
+    "/thumbnails/vlog-3.jpg",
+    "/thumbnails/vlog-4.jpg",
+    "/thumbnails/vlog-5.jpg",
+    "/thumbnails/vlog-6.jpg",
+    "/thumbnails/vlog-7.jpg",
+    "/thumbnails/smm-1.jpg",
+    "/thumbnails/smm-2.jpg",
+    "/thumbnails/smm-3.jpg",
+    "/thumbnails/smm-4.jpg",
+    "/thumbnails/smm-5.jpg",
+    "/thumbnails/smm-6.jpg",
+    "/thumbnails/smm-7.jpg",
+  ];
 
   return (
-    <section className="relative bg-gradient-to-br from-primary/3 to-accent/6 py-16 lg:py-24 overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Trust Badge */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Star className="h-4 w-4 fill-current" />
-            Trusted by 500+ YouTube Creators
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <MarqueeBackground thumbnails={thumbnails} />
 
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            YouTube Thumbnails That
-            <span className="block text-primary">
-              Actually Get Clicks
+      <div className="relative z-20 container mx-auto px-4 py-20 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
+            YouTube Thumbnails That{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Demand Clicks
             </span>
           </h1>
-          
-          <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto leading-relaxed">
-            Stop losing views to poor thumbnails. Get professional, conversion-focused designs that make your content irresistible to click.
+
+          <p className="text-xl md:text-2xl mb-8 text-white/90 drop-shadow-lg max-w-2xl mx-auto">
+            Transform your content with professionally designed thumbnails that stand out
+            in the feed and convert viewers into subscribers.
           </p>
-          
-          {/* Key Benefits */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <CheckCircle className="h-4 w-4 text-green-500" />
-              No AI Templates
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <CheckCircle className="h-4 w-4 text-green-500" />
-              Research-Backed Designs
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <CheckCircle className="h-4 w-4 text-green-500" />
-              48-Hour Delivery
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-4 bg-primary hover:bg-primary/90 shadow-lg"
-              onClick={() => scrollToSection('services')}
-            >
-              Start Your Project <ArrowRight className="ml-2 h-5 w-5" />
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Button size="lg" className="text-lg px-8 py-6 shadow-2xl" asChild>
+              <Link to="/services/test-drive">
+                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 py-4 border-2 border-muted-foreground/20 hover:border-primary hover:text-primary"
-              onClick={() => scrollToSection('portfolio')}
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 shadow-2xl"
+              asChild
             >
-              See Our Work
+              <Link to="/portfolio">
+                <Play className="mr-2 h-5 w-5" />
+                View Our Work
+              </Link>
             </Button>
           </div>
 
-          {/* Marquee Creators */}
-          <div className="mt-12 pt-8 border-t border-border/50">
-            <p className="text-sm text-muted-foreground mb-6">
-              Join creators who've increased their CTR by up to <span className="text-red-500 font-bold">400%</span>
-            </p>
-            <MarqueeCreators />
+          <div className="flex flex-wrap gap-8 justify-center items-center text-white/80">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white drop-shadow-lg">500+</div>
+              <div className="text-sm drop-shadow-md">Thumbnails Created</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/30" />
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white drop-shadow-lg">250+</div>
+              <div className="text-sm drop-shadow-md">Happy Creators</div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-white/30" />
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white drop-shadow-lg">40%</div>
+              <div className="text-sm drop-shadow-md">Avg. CTR Increase</div>
+            </div>
           </div>
         </div>
       </div>
