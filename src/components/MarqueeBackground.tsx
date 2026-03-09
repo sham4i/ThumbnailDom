@@ -28,7 +28,7 @@ const MarqueeBackground = ({ thumbnails }: MarqueeBackgroundProps) => {
     <div className="absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 z-10" />
 
-      <div className="relative h-full flex flex-col justify-around py-8">
+      <div className="relative h-full flex flex-col justify-center gap-6 py-4">
         {rows.map((row, rowIndex) => (
           <div
             key={rowIndex}

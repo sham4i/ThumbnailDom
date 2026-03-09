@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import FloatingThumbnails from "./FloatingThumbnails";
 import MarqueeCreators from "./MarqueeCreators";
 import MarqueeBackground from "./MarqueeBackground";
 
@@ -12,9 +11,6 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-secondary/5">
       {/* Animated Marquee Background - lowest layer */}
       <MarqueeBackground thumbnails={thumbnails} />
-
-      {/* Original Floating Thumbnails */}
-      <FloatingThumbnails />
 
       {/* Main Hero Content */}
       <div className="relative z-20 container mx-auto px-4 py-20 text-center">
