@@ -1,4 +1,4 @@
-import { XCircle } from "lucide-react";
+import { Circle as XCircle } from "lucide-react";
 
 const Problem = () => {
   const problems = [

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, FileText, BarChart3 } from "lucide-react";
+import { Target, FileText, ChartBar as BarChart3 } from "lucide-react";
 
 const Benefits = () => {
   const features = [
