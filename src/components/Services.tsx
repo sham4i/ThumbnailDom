@@ -1,162 +1,113 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
 import { Check, ArrowRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCheckout } from "@/hooks/useCheckout";
 
 const Services = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
   const { initiateCheckout, isLoading } = useCheckout();
 
   const services = [
     {
-      name: "Test Drive",
-      subtitle: "Single Design",
-      price: 60,
+      name: "Packaging Test",
+      subtitle: "$149",
+      price: 149,
+      effectivePrice: null,
       isOneTime: true,
-      description: "Perfect for trying our service. One high-converting thumbnail to test the waters.",
+      description: "Try our YouTube packaging strategy with one complete project.",
       features: [
-        "1 custom thumbnail design",
-        "Niche research included",
+        "1 YouTube packaging concept",
+        "Custom thumbnail design",
+        "2 title direction options",
+        "Niche research",
         "2 revision rounds",
-        "48-hour delivery",
-        "High-resolution files (PNG/JPG)"
+        "48 hour delivery"
       ],
       popular: false,
-      cta: "Get Started",
+      cta: "Start Test",
       serviceType: "test-drive",
       learnMoreLink: "/service/test-drive"
     },
     {
-      name: "Creator Pro",
-      subtitle: "Monthly Retainer",
-      price: 247,
-      annualDiscount: 0.1,
+      name: "Creator Plan",
+      subtitle: "$597 / month",
+      price: 597,
+      effectivePrice: "$119 per packaging",
       isOneTime: false,
-      description: "For consistent creators who need regular, professional thumbnails that convert.",
+      description: "For consistent creators who need regular packaging strategies.",
       features: [
-        "5 custom thumbnails per month",
-        "Priority support",
-        "Unlimited revisions",
-        "Brand consistency guide",
-        "24-hour delivery",
-        "Performance analytics"
+        "5 packaging designs per month",
+        "Thumbnail + title exploration",
+        "Brand visual alignment",
+        "Priority delivery",
+        "Unlimited revisions"
       ],
       popular: true,
-      cta: "Start Creating",
+      cta: "Start Creator Plan",
       serviceType: "creator-pro",
       learnMoreLink: "/service/creator-pro"
     },
     {
-      name: "Creator Pro+",
-      subtitle: "Premium Retainer",
-      price: 447,
-      annualDiscount: 0.15,
+      name: "Growth Plan",
+      subtitle: "$1,097 / month",
+      price: 1097,
+      effectivePrice: "$109 per packaging",
       isOneTime: false,
-      description: "For serious creators who demand maximum impact and strategic guidance.",
+      description: "Scale your channel with strategic packaging and performance analysis.",
       features: [
-        "10 custom thumbnails per month",
+        "10 packaging designs per month",
+        "Thumbnail + title strategy",
         "A/B testing variants",
-        "Monthly strategy calls",
-        "Custom brand assets",
-        "Same-day delivery option",
-        "Performance optimization",
-        "Dedicated account manager"
+        "Monthly performance review",
+        "Priority support"
       ],
       popular: false,
-      cta: "Go Premium",
+      cta: "Scale My Channel",
       serviceType: "creator-pro-plus",
       learnMoreLink: "/service/creator-pro-plus"
     },
     {
-      name: "Enterprise",
-      subtitle: "Custom Solution",
+      name: "Enterprise Packaging",
+      subtitle: "Custom Quote",
       price: null,
+      effectivePrice: null,
       isOneTime: false,
-      description: "Tailored solutions for agencies, teams, and high-volume creators.",
+      description: "For agencies, large YouTube channels, and media teams.",
       features: [
-        "Unlimited thumbnails",
-        "Multiple brand guidelines",
-        "Team collaboration tools",
-        "White-label options",
-        "Custom workflows",
         "Dedicated design team",
-        "SLA guarantees"
+        "Packaging audits",
+        "Channel visual systems",
+        "High-volume production"
       ],
       popular: false,
-      cta: "Contact Sales",
+      cta: "Contact Us",
       serviceType: "enterprise",
       learnMoreLink: "/service/enterprise"
     }
   ];
 
-  const calculatePrice = (service: any) => {
-    if (service.price === null || service.isOneTime) return service.price;
-    if (isAnnual && service.annualDiscount) {
-      return Math.round(service.price * (1 - service.annualDiscount));
-    }
-    return service.price;
-  };
-
-  const calculateSavings = (service: any) => {
-    if (!service.annualDiscount || !isAnnual) return 0;
-    const monthlyTotal = service.price * 12;
-    const annualTotal = calculatePrice(service) * 12;
-    return monthlyTotal - annualTotal;
-  };
-
-  const formatPrice = (service: any) => {
-    const price = calculatePrice(service);
-    if (price === null) return "Let's talk";
-    if (service.isOneTime) return `$${price}`;
-    return `$${price}/month`;
-  };
-
   const handleServiceClick = (service: any) => {
     if (service.serviceType === "enterprise") {
-      // Enterprise requires custom consultation
       window.location.href = "/contact?service=enterprise";
       return;
     }
 
     initiateCheckout({
       serviceType: service.serviceType,
-      isAnnual: !service.isOneTime && isAnnual,
+      isAnnual: false,
     });
   };
 
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Choose Your Growth Plan
+            YouTube Packaging Plans
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            From single designs to full retainer packages. Scale your thumbnail game at your own pace.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Strategic packaging solutions for creators at every stage.
           </p>
-          
-          {/* Pricing Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Monthly
-            </span>
-            <Switch
-              checked={isAnnual}
-              onCheckedChange={setIsAnnual}
-            />
-            <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-              Annual
-            </span>
-            {isAnnual && (
-              <span className="text-sm bg-green-100 text-green-700 px-2 py-1 rounded-full ml-2 font-medium">
-                Save up to 15%
-              </span>
-            )}
-          </div>
         </div>
         
         {/* Pricing Cards */}
@@ -179,26 +130,18 @@ const Services = () => {
               <CardHeader className="text-center pb-4">
                 <div className="mb-2">
                   <CardTitle className="text-xl mb-1">{service.name}</CardTitle>
-                  <CardDescription className="text-sm font-medium text-primary">
+                  <CardDescription className="text-lg font-semibold">
                     {service.subtitle}
                   </CardDescription>
                 </div>
-                
-                <div className="py-4">
-                  <div className="text-3xl font-bold text-foreground mb-1">
-                    {formatPrice(service)}
+
+                {service.effectivePrice && (
+                  <div className="py-2">
+                    <div className="text-sm text-muted-foreground">
+                      {service.effectivePrice}
+                    </div>
                   </div>
-                  {isAnnual && service.annualDiscount && calculateSavings(service) > 0 && (
-                    <div className="text-sm text-green-600 font-medium">
-                      Save ${calculateSavings(service)}/year
-                    </div>
-                  )}
-                  {isAnnual && service.price && !service.isOneTime && service.annualDiscount && (
-                    <div className="text-xs text-muted-foreground line-through">
-                      ${service.price}/month
-                    </div>
-                  )}
-                </div>
+                )}
               </CardHeader>
               
               <CardContent className="pt-0">

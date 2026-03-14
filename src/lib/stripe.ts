@@ -1,10 +1,8 @@
 // Stripe configuration and helper functions
 export const STRIPE_PRICE_IDS = {
-  TEST_DRIVE: 'price_1RbGDbGjGTuZA421O6m30oGB', // Replace with actual Stripe price ID
-  CREATOR_PRO_MONTHLY: 'price_1RawbxGjGTuZA421cdNpCO5f', // Replace with actual Stripe price ID
-  CREATOR_PRO_ANNUAL: 'price_1RawbxGjGTuZA4212k6j9q3D', // Replace with actual Stripe price ID (247 * 12 * 0.9)
-  CREATOR_PRO_PLUS_MONTHLY: 'price_1RawcnGjGTuZA421VS3uLVxq', // Replace with actual Stripe price ID
-  CREATOR_PRO_PLUS_ANNUAL: 'price_1RawcnGjGTuZA421kV0lqQuo', // Replace with actual Stripe price ID (447 * 12 * 0.85)
+  TEST_DRIVE: 'price_1RbGDbGjGTuZA421O6m30oGB',
+  CREATOR_PRO_MONTHLY: 'price_1RawbxGjGTuZA421cdNpCO5f',
+  CREATOR_PRO_PLUS_MONTHLY: 'price_1RawcnGjGTuZA421VS3uLVxq',
 } as const;
 
 export interface CreateCheckoutSessionParams {
@@ -52,9 +50,9 @@ export function getPriceId(serviceType: string, isAnnual: boolean = false): stri
     case 'test-drive':
       return STRIPE_PRICE_IDS.TEST_DRIVE;
     case 'creator-pro':
-      return isAnnual ? STRIPE_PRICE_IDS.CREATOR_PRO_ANNUAL : STRIPE_PRICE_IDS.CREATOR_PRO_MONTHLY;
+      return STRIPE_PRICE_IDS.CREATOR_PRO_MONTHLY;
     case 'creator-pro-plus':
-      return isAnnual ? STRIPE_PRICE_IDS.CREATOR_PRO_PLUS_ANNUAL : STRIPE_PRICE_IDS.CREATOR_PRO_PLUS_MONTHLY;
+      return STRIPE_PRICE_IDS.CREATOR_PRO_PLUS_MONTHLY;
     default:
       throw new Error(`Unknown service type: ${serviceType}`);
   }
@@ -75,21 +73,21 @@ export function getCheckoutMode(serviceType: string): 'payment' | 'subscription'
 export function getServiceMetadata(serviceType: string, isAnnual: boolean = false) {
   const metadata: Record<string, string> = {
     service_type: serviceType,
-    billing_cycle: isAnnual ? 'annual' : 'monthly',
+    billing_cycle: 'monthly',
   };
 
   switch (serviceType) {
     case 'test-drive':
-      metadata.service_name = 'Test Drive - Single Design';
-      metadata.thumbnail_count = '1';
+      metadata.service_name = 'Packaging Test';
+      metadata.packaging_count = '1';
       break;
     case 'creator-pro':
-      metadata.service_name = 'Creator Pro Monthly Retainer';
-      metadata.thumbnail_count = '5';
+      metadata.service_name = 'Creator Plan';
+      metadata.packaging_count = '5';
       break;
     case 'creator-pro-plus':
-      metadata.service_name = 'Creator Pro+ Premium Retainer';
-      metadata.thumbnail_count = '10';
+      metadata.service_name = 'Growth Plan';
+      metadata.packaging_count = '10';
       break;
   }
 

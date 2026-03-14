@@ -1,10 +1,12 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
-import Services from "@/components/Services";
-import HowItWorks from "@/components/HowItWorks";
+import SocialProof from "@/components/SocialProof";
+import Problem from "@/components/Problem";
 import Benefits from "@/components/Benefits";
-import Testimonials from "@/components/Testimonials";
+import HowItWorks from "@/components/HowItWorks";
+import Portfolio from "@/components/Portfolio";
+import Results from "@/components/Results";
+import Services from "@/components/Services";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -12,12 +14,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="pt-16"> {/* Add padding-top to account for fixed navigation */}
+      <div className="pt-16">
         <Hero />
-        <Portfolio />
-        <HowItWorks />
+        <SocialProof />
+        <Problem />
         <Benefits />
-        <Testimonials />
+        <HowItWorks />
+        <Portfolio />
+        <Results />
         <Services />
         <FAQ />
         <Footer />

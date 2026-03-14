@@ -9,36 +9,28 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "How do your thumbnails differ from AI-generated ones?",
-      answer: "Our thumbnails are strategically crafted by experienced designers who understand YouTube psychology and your specific niche. Unlike AI-generated templates, each design is unique, research-backed, and tailored to your brand and content style."
+      question: "What is YouTube packaging?",
+      answer: "YouTube packaging is the strategic combination of thumbnail design and title optimization working together to maximize click-through rate. We don't just design thumbnails in isolation—we develop packaging concepts where the visual and text work in harmony to drive clicks."
     },
     {
-      question: "What's your typical turnaround time?",
-      answer: "For single thumbnails, we deliver within 48 hours. Pro retainer clients get 24-hour delivery, and Pro+ clients can access same-day delivery options for urgent content."
+      question: "How fast is delivery?",
+      answer: "Packaging Test delivers within 48 hours. Creator Plan clients get priority delivery, and Growth Plan clients receive even faster turnaround with optional A/B testing variants."
     },
     {
       question: "Do you provide revisions?",
-      answer: "Yes! Test the Waters includes 2 revision rounds, while Pro and Pro+ clients get unlimited revisions to ensure complete satisfaction with the final design."
+      answer: "Yes! Packaging Test includes 2 revision rounds. Creator Plan and Growth Plan clients get unlimited revisions to ensure your packaging is perfect before launch."
     },
     {
-      question: "What do I need to provide for my thumbnail design?",
-      answer: "We need your video assets (screenshots, photos), video topic/title, any specific text you want included, brand colors/guidelines if available, and any style preferences or reference thumbnails."
+      question: "Do you help with titles?",
+      answer: "Absolutely! Title strategy is a core part of our packaging service. We provide 2–3 title direction options designed to work synergistically with your thumbnail, maximizing curiosity and click-through rate."
     },
     {
       question: "Can you match my existing brand style?",
-      answer: "Absolutely! We create custom brand consistency guides and ensure all thumbnails align with your established visual identity while optimizing for maximum click-through rates."
+      answer: "Yes! We develop visual systems that strengthen your brand credibility while optimizing for performance. Our packaging maintains brand consistency across your entire channel."
     },
     {
-      question: "Do you work with all types of content?",
-      answer: "Yes, we have experience across all major YouTube niches including vlogs, educational content, gaming, business, tech, documentaries, and more. Each design is tailored to your specific audience and content type."
-    },
-    {
-      question: "What file formats do you provide?",
-      answer: "You'll receive high-resolution files in multiple formats including PNG (recommended for YouTube), JPG, and source files. All thumbnails are optimized for YouTube's display requirements."
-    },
-    {
-      question: "Can I cancel my retainer anytime?",
-      answer: "Yes, our monthly retainers can be cancelled at any time with 30 days notice. We believe in earning your business through results, not binding contracts."
+      question: "Do you work with all YouTube niches?",
+      answer: "Yes, we've created packaging strategies across all major YouTube niches including tech, business, education, finance, creator economy, and more. Each packaging concept is tailored to your specific audience and competitive landscape."
     }
   ];
 
@@ -49,7 +41,7 @@ const FAQ = () => {
           Frequently Asked Questions
         </h2>
         <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Get answers to common questions about our thumbnail design service.
+          Get answers to common questions about our YouTube packaging service.
         </p>
         
         <div className="max-w-3xl mx-auto">

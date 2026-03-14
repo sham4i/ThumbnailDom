@@ -16,13 +16,12 @@ const Footer = () => {
     <footer className="bg-background border-t">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold mb-4">Ready to Dominate YouTube?</h3>
+          <h3 className="text-2xl font-bold mb-4">Ready to Stop Guessing What Gets Clicks?</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Stop letting poor thumbnails hold back your amazing content. 
-            Get professional, conversion-focused designs that your audience can't ignore.
+            Your videos deserve packaging designed to compete with the best creators in your niche.
           </p>
           <Button size="lg" className="text-lg px-8 py-4" onClick={() => scrollToSection('services')}>
-            Get Started Today
+            Start Your Packaging Test
           </Button>
         </div>
         
@@ -32,7 +31,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="font-bold text-lg mb-2">Thumb Domination Agency</h4>
             <p className="text-sm text-muted-foreground">
-              Professional YouTube thumbnail design that converts.
+              YouTube packaging strategy that drives clicks.
             </p>
           </div>
           

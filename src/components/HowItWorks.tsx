@@ -6,26 +6,26 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: MessageSquare,
-      title: "Brief & Assets",
-      description: "Share your video details, target audience, and any assets you have. Tell us about your brand and goals.",
+      title: "Brief",
+      description: "You send the video concept, current title idea, and any assets.",
       time: "5 minutes"
     },
     {
       icon: Search,
-      title: "Strategic Research",
-      description: "We analyze your niche, competitors, and trending patterns to identify what drives clicks in your space.",
+      title: "Packaging Strategy",
+      description: "We analyze your niche and develop 2–3 packaging directions.",
       time: "24 hours"
     },
     {
       icon: Palette,
-      title: "Design & Create",
-      description: "Our designers craft unique, conversion-focused thumbnails that align with your brand and grab attention.",
+      title: "Thumbnail Design",
+      description: "We design a high-impact thumbnail supporting the strongest title hook.",
       time: "24-48 hours"
     },
     {
       icon: Rocket,
-      title: "Deliver & Launch",
-      description: "Receive your high-resolution files, provide feedback if needed, and watch your click-through rates soar.",
+      title: "Launch",
+      description: "You receive final files and optional A/B testing recommendations.",
       time: "Instant"
     }
   ];
@@ -35,10 +35,10 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            How We Create Winning Thumbnails
+            Our 4-Step Packaging Process
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our proven 4-step process ensures every thumbnail is strategically designed to maximize your views and engagement.
+            From concept to launch, we strategically craft packaging that turns impressions into views.
           </p>
         </div>
         
