@@ -21,7 +21,7 @@ const Footer = () => {
             Your videos deserve packaging designed to compete with the best creators in your niche.
           </p>
           <Button size="lg" className="text-lg px-8 py-4" onClick={() => scrollToSection('services')}>
-            Start Your Packaging Test
+            Start Your Audit
           </Button>
         </div>
         

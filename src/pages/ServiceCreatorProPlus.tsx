@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
-import { Check, ArrowRight, Clock, Target, Zap, BarChart3, Users, Headphones } from "lucide-react";
+import { Check, ArrowRight, Clock, Target, Zap, ChartBar as BarChart3, Users, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCheckout } from "@/hooks/useCheckout";
 
 const ServiceCreatorProPlus = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const { initiateCheckout, isLoading } = useCheckout();
-  
-  const basePrice = 447;
+
+  const basePrice = 1500;
   const annualDiscount = 0.15;
-  
+
   const calculatePrice = () => {
     if (isAnnual) {
       return Math.round(basePrice * (1 - annualDiscount));
@@ -33,51 +33,51 @@ const ServiceCreatorProPlus = () => {
   const features = [
     {
       icon: <Target className="h-5 w-5" />,
-      title: "10 Custom Thumbnails",
-      description: "Double the volume for high-output creators"
-    },
-    {
-      icon: <BarChart3 className="h-5 w-5" />,
-      title: "A/B Testing Variants",
-      description: "Test multiple versions to optimize performance"
-    },
-    {
-      icon: <Headphones className="h-5 w-5" />,
-      title: "Monthly Strategy Calls",
-      description: "Personal consultations with our design experts"
-    },
-    {
-      icon: <Zap className="h-5 w-5" />,
-      title: "Same-Day Delivery",
-      description: "Rush delivery available for urgent content"
+      title: "8 Thumbnails Monthly",
+      description: "Everything in Creator Packaging, plus more volume"
     },
     {
       icon: <Users className="h-5 w-5" />,
-      title: "Dedicated Manager",
-      description: "Personal account manager for streamlined service"
+      title: "Visual System",
+      description: "Custom palette, typography, layout rules, and host framing"
+    },
+    {
+      icon: <BarChart3 className="h-5 w-5" />,
+      title: "Structured A/B Tests",
+      description: "Data-driven testing on thumbnails and titles"
+    },
+    {
+      icon: <Headphones className="h-5 w-5" />,
+      title: "Performance Reviews",
+      description: "Monthly review with clear next-step recommendations"
+    },
+    {
+      icon: <Zap className="h-5 w-5" />,
+      title: "Priority Delivery",
+      description: "Priority queue for faster turnaround"
     }
   ];
 
   const faqs = [
     {
-      question: "What makes Pro+ different from Pro?",
-      answer: "Pro+ includes double the thumbnails (10 vs 5), A/B testing variants, monthly strategy calls, same-day delivery options, and a dedicated account manager for premium support."
+      question: "What makes Growth System different from Creator Packaging?",
+      answer: "Growth System includes 8 thumbnails (vs 4), a complete visual system for your channel, structured A/B tests, monthly performance reviews, and priority delivery."
     },
     {
-      question: "How do A/B testing variants work?",
-      answer: "We create 2-3 different versions of each thumbnail so you can test which performs better with your audience, helping optimize your click-through rates over time."
+      question: "What is a visual system?",
+      answer: "A comprehensive design framework including your color palette, typography choices, layout rules, and host framing guidelines. You get a system guide that your team can follow internally."
     },
     {
-      question: "What happens during strategy calls?",
-      answer: "Monthly 30-minute calls where we review your performance data, discuss upcoming content, refine your brand direction, and provide strategic recommendations for maximum impact."
+      question: "How do structured A/B tests work?",
+      answer: "We create strategic variations and help you test different approaches on thumbnails and titles, using data to inform what works best for your audience."
     },
     {
-      question: "How fast is same-day delivery?",
-      answer: "For urgent requests submitted before 12 PM EST, we can deliver thumbnails the same business day. This service is available for up to 2 thumbnails per month."
+      question: "What's included in the performance review?",
+      answer: "Monthly analysis of your packaging performance with clear, actionable recommendations for improvement based on real data from your channel."
     },
     {
-      question: "What does a dedicated account manager do?",
-      answer: "Your personal account manager handles all communication, ensures consistent quality, remembers your preferences, and proactively suggests improvements based on your content calendar."
+      question: "What's the member add-on rate?",
+      answer: "Need more than 8 thumbnails in a month? Get any additional thumbnails at 15% off our standard per-thumbnail price while on this plan."
     }
   ];
 
@@ -96,15 +96,15 @@ const ServiceCreatorProPlus = () => {
         <section className="py-20 bg-gradient-to-br from-purple-500/10 to-primary/10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="default" className="mb-4 bg-purple-600 hover:bg-purple-700">
+              <Badge variant="default" className="mb-4">
                 <Zap className="h-3 w-3 mr-1" />
-                Premium Retainer
+                Recommended
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Creator Pro+ Premium
+                Growth System — $1,500/month
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                For serious creators who demand maximum impact and strategic guidance. Get premium volume, A/B testing, and dedicated support for explosive growth.
+                For channels that want a proper visual system and ongoing optimization. Build a cohesive brand with strategic testing.
               </p>
               
               {/* Pricing Toggle */}

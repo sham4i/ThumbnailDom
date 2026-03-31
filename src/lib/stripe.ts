@@ -1,8 +1,8 @@
 // Stripe configuration and helper functions
 export const STRIPE_PRICE_IDS = {
-  TEST_DRIVE: 'price_1RbGDbGjGTuZA421O6m30oGB',
-  CREATOR_PRO_MONTHLY: 'price_1RawbxGjGTuZA421cdNpCO5f',
-  CREATOR_PRO_PLUS_MONTHLY: 'price_1RawcnGjGTuZA421VS3uLVxq',
+  STARTER_AUDIT: 'price_1RbGDbGjGTuZA421O6m30oGB',
+  CREATOR_PACKAGING_MONTHLY: 'price_1RawbxGjGTuZA421cdNpCO5f',
+  GROWTH_SYSTEM_MONTHLY: 'price_1RawcnGjGTuZA421VS3uLVxq',
 } as const;
 
 export interface CreateCheckoutSessionParams {
@@ -47,12 +47,12 @@ export async function createCheckoutSession(
 
 export function getPriceId(serviceType: string, isAnnual: boolean = false): string {
   switch (serviceType) {
-    case 'test-drive':
-      return STRIPE_PRICE_IDS.TEST_DRIVE;
+    case 'starter-audit':
+      return STRIPE_PRICE_IDS.STARTER_AUDIT;
     case 'creator-pro':
-      return STRIPE_PRICE_IDS.CREATOR_PRO_MONTHLY;
+      return STRIPE_PRICE_IDS.CREATOR_PACKAGING_MONTHLY;
     case 'creator-pro-plus':
-      return STRIPE_PRICE_IDS.CREATOR_PRO_PLUS_MONTHLY;
+      return STRIPE_PRICE_IDS.GROWTH_SYSTEM_MONTHLY;
     default:
       throw new Error(`Unknown service type: ${serviceType}`);
   }
@@ -60,11 +60,11 @@ export function getPriceId(serviceType: string, isAnnual: boolean = false): stri
 
 export function getCheckoutMode(serviceType: string): 'payment' | 'subscription' {
   switch (serviceType) {
-    case 'test-drive':
-      return 'payment'; // One-time payment
+    case 'starter-audit':
+      return 'payment';
     case 'creator-pro':
     case 'creator-pro-plus':
-      return 'subscription'; // Recurring subscription
+      return 'subscription';
     default:
       throw new Error(`Unknown service type: ${serviceType}`);
   }
@@ -77,17 +77,20 @@ export function getServiceMetadata(serviceType: string, isAnnual: boolean = fals
   };
 
   switch (serviceType) {
-    case 'test-drive':
-      metadata.service_name = 'Packaging Test';
-      metadata.packaging_count = '1';
+    case 'starter-audit':
+      metadata.service_name = 'Starter Audit';
+      metadata.thumbnail_count = '3';
+      metadata.delivery_time = '48 hours per thumbnail';
       break;
     case 'creator-pro':
-      metadata.service_name = 'Creator Plan';
-      metadata.packaging_count = '5';
+      metadata.service_name = 'Creator Packaging';
+      metadata.thumbnail_count = '4';
+      metadata.delivery_time = '48 hours';
       break;
     case 'creator-pro-plus':
-      metadata.service_name = 'Growth Plan';
-      metadata.packaging_count = '10';
+      metadata.service_name = 'Growth System';
+      metadata.thumbnail_count = '8';
+      metadata.includes_visual_system = 'true';
       break;
   }
 

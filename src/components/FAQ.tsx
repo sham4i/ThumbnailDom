@@ -14,23 +14,23 @@ const FAQ = () => {
     },
     {
       question: "How fast is delivery?",
-      answer: "Packaging Test delivers within 48 hours. Creator Plan clients get priority delivery, and Growth Plan clients receive even faster turnaround with optional A/B testing variants."
+      answer: "Starter Audit delivers within 48 hours per thumbnail. Creator Packaging clients get 48-hour turnaround on scheduled uploads. Growth System clients receive priority delivery with structured A/B testing."
     },
     {
       question: "Do you provide revisions?",
-      answer: "Yes! Packaging Test includes 2 revision rounds. Creator Plan and Growth Plan clients get unlimited revisions to ensure your packaging is perfect before launch."
+      answer: "Yes! Starter Audit includes 1 revision round per thumbnail. Creator Packaging and Growth System clients get ongoing revision support to ensure your packaging is perfect before launch."
     },
     {
       question: "Do you help with titles?",
-      answer: "Absolutely! Title strategy is a core part of our packaging service. We provide 2–3 title direction options designed to work synergistically with your thumbnail, maximizing curiosity and click-through rate."
+      answer: "Absolutely! Title strategy is a core part of our packaging service. We provide 2–3 title options designed to work synergistically with your thumbnail, maximizing curiosity and click-through rate."
     },
     {
       question: "Can you match my existing brand style?",
-      answer: "Yes! We develop visual systems that strengthen your brand credibility while optimizing for performance. Our packaging maintains brand consistency across your entire channel."
+      answer: "Yes! Growth System includes a complete visual system (palette, typography, layout rules) that strengthens your brand credibility while optimizing for performance. We maintain consistency across your entire channel."
     },
     {
-      question: "Do you work with all YouTube niches?",
-      answer: "Yes, we've created packaging strategies across all major YouTube niches including tech, business, education, finance, creator economy, and more. Each packaging concept is tailored to your specific audience and competitive landscape."
+      question: "What's the member add-on rate?",
+      answer: "While on Creator Packaging or Growth System plans, you can purchase additional thumbnails at 15% off our standard per-thumbnail price. This gives you flexibility for high-upload months."
     }
   ];
 

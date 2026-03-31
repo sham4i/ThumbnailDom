@@ -57,8 +57,8 @@ const Hero = () => {
               className="text-base md:text-lg px-8 py-6 bg-red-500 hover:bg-red-600 text-white font-semibold shadow-lg shadow-red-500/20 transition-all"
               asChild
             >
-              <Link to="/services/test-drive">
-                Start a Packaging Test <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/service/starter-audit">
+                Start Your Audit <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
 

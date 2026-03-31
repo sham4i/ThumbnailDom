@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
-import { Check, ArrowRight, Clock, Target, Zap, BarChart3, Users } from "lucide-react";
+import { Check, ArrowRight, Clock, Target, Zap, ChartBar as BarChart3, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCheckout } from "@/hooks/useCheckout";
 
 const ServiceCreatorPro = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const { initiateCheckout, isLoading } = useCheckout();
-  
-  const basePrice = 247;
+
+  const basePrice = 1200;
   const annualDiscount = 0.1;
-  
+
   const calculatePrice = () => {
     if (isAnnual) {
       return Math.round(basePrice * (1 - annualDiscount));
@@ -33,51 +33,51 @@ const ServiceCreatorPro = () => {
   const features = [
     {
       icon: <Target className="h-5 w-5" />,
-      title: "5 Custom Thumbnails",
-      description: "Monthly allocation of professional thumbnail designs"
+      title: "4 Thumbnails Monthly",
+      description: "Consistent, high-performing thumbnails each month"
     },
     {
       icon: <Zap className="h-5 w-5" />,
-      title: "Priority Support",
-      description: "Skip the queue with dedicated priority assistance"
+      title: "Title Options",
+      description: "2–3 title options per video to maximize appeal"
     },
     {
       icon: <Clock className="h-5 w-5" />,
-      title: "24-Hour Delivery",
-      description: "Faster turnaround for your urgent content needs"
+      title: "48-Hour Turnaround",
+      description: "Fast delivery on scheduled uploads"
     },
     {
       icon: <BarChart3 className="h-5 w-5" />,
-      title: "Performance Analytics",
-      description: "Track your thumbnail performance and optimization"
+      title: "Light A/B Testing",
+      description: "Test variations on priority episodes"
     },
     {
       icon: <Users className="h-5 w-5" />,
-      title: "Brand Consistency",
-      description: "Custom brand guide to maintain visual identity"
+      title: "Async Delivery",
+      description: "Feedback and delivery on your schedule"
     }
   ];
 
   const faqs = [
     {
+      question: "What's the member add-on rate?",
+      answer: "While you're on this plan, you can purchase additional thumbnails at 15% off our standard per-thumbnail price."
+    },
+    {
       question: "Can I roll over unused thumbnails?",
-      answer: "Yes! Unused thumbnails from your monthly allocation can roll over to the next month, up to a maximum of 2 months worth of credits."
+      answer: "Thumbnails are designed for regular monthly uploads. Contact us if you have specific rollover needs."
     },
     {
-      question: "What if I need more than 5 thumbnails?",
-      answer: "You can purchase additional thumbnails at a discounted rate of $35 each, or upgrade to Creator Pro+ for higher volume needs."
-    },
-    {
-      question: "How does priority support work?",
-      answer: "As a Pro member, your requests are processed ahead of Test Drive customers, ensuring faster response times and quicker delivery."
+      question: "What if I need more than 4 thumbnails per month?",
+      answer: "You can add more thumbnails at the 15% discount, or upgrade to Growth System for 8 thumbnails/month with visual system included."
     },
     {
       question: "Can I cancel anytime?",
-      answer: "Yes, you can cancel your subscription at any time with 30 days notice. We believe in earning your business through results."
+      answer: "Yes, you can cancel your subscription at any time with 30 days notice."
     },
     {
-      question: "What analytics do you provide?",
-      answer: "We track click-through rates, view performance, and provide insights on which thumbnail styles work best for your audience."
+      question: "What does async feedback mean?",
+      answer: "You provide feedback and we deliver revisions on a flexible timeline that works with your schedule—no real-time meetings required."
     }
   ];
 
@@ -96,15 +96,14 @@ const ServiceCreatorPro = () => {
         <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="default" className="mb-4">
-                <Zap className="h-3 w-3 mr-1" />
-                Most Popular
+              <Badge variant="secondary" className="mb-4">
+                Monthly Packaging Plan
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Creator Pro Monthly
+                Creator Packaging — $1,200/month
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Perfect for consistent creators who need regular, professional thumbnails that convert. Build your brand with strategic design consistency.
+                For creators who want consistent, high-performing thumbnails and titles every month.
               </p>
               
               {/* Pricing Toggle */}

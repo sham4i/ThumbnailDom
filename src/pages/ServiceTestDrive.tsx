@@ -13,43 +13,43 @@ const ServiceTestDrive = () => {
   const features = [
     {
       icon: <Target className="h-5 w-5" />,
-      title: "Custom Design",
-      description: "One unique thumbnail tailored to your content and niche"
+      title: "3 Episodes",
+      description: "Test high-quality packaging on three real episodes"
     },
     {
       icon: <Zap className="h-5 w-5" />,
-      title: "Niche Research",
-      description: "We analyze your competition and target audience"
+      title: "Before vs After",
+      description: "Clear results on three key videos to see the impact"
     },
     {
       icon: <Clock className="h-5 w-5" />,
       title: "48-Hour Delivery",
-      description: "Get your thumbnail within 2 business days"
+      description: "Get each thumbnail within 48 hours"
     }
   ];
 
   const faqs = [
     {
-      question: "What do I need to provide?",
-      answer: "We need your video screenshots or photos, video topic/title, any specific text requirements, and your brand colors if you have them."
+      question: "What exactly do I get?",
+      answer: "You get 3 complete episode packages - one thumbnail per episode, 2 title options for each, and 1 revision round per thumbnail. This gives you a clear before/after comparison on three key videos."
     },
     {
       question: "How many revisions are included?",
-      answer: "You get 2 revision rounds to ensure the final design meets your expectations."
+      answer: "You get 1 revision round per thumbnail to ensure the final design meets your expectations."
+    },
+    {
+      question: "What if I want to continue after the audit?",
+      answer: "If you love the results, you can easily upgrade to Creator Packaging ($1,200/month) or Growth System ($1,500/month) for ongoing support."
     },
     {
       question: "What file formats will I receive?",
-      answer: "You'll get high-resolution PNG and JPG files optimized for YouTube's requirements."
-    },
-    {
-      question: "Can I upgrade to a retainer later?",
-      answer: "Absolutely! If you love our work, you can easily upgrade to Creator Pro or Pro+ at any time."
+      answer: "You'll get high-resolution PNG and JPG files optimized for YouTube's requirements, plus the title options as a text document."
     }
   ];
 
   const handleOrderClick = () => {
     initiateCheckout({
-      serviceType: 'test-drive',
+      serviceType: 'starter-audit',
       isAnnual: false,
     });
   };
@@ -62,24 +62,24 @@ const ServiceTestDrive = () => {
         <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="secondary" className="mb-4">Single Design Package</Badge>
+              <Badge variant="secondary" className="mb-4">Starter Audit Package</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Test Drive Our Service
+                Starter Audit — $450
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Perfect for trying our service with one high-converting thumbnail design. See the difference professional design makes for your content.
+                For channels that want to test high-quality packaging on real episodes. Get a clear "before vs after" on three key videos.
               </p>
               <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="text-4xl font-bold text-primary">$60</div>
+                <div className="text-4xl font-bold text-primary">$450</div>
                 <div className="text-muted-foreground">one-time payment</div>
               </div>
-              <Button 
-                size="lg" 
-                className="text-lg px-8 py-4" 
+              <Button
+                size="lg"
+                className="text-lg px-8 py-4"
                 onClick={handleOrderClick}
                 disabled={isLoading}
               >
-                {isLoading ? "Processing..." : "Order Now"} <ArrowRight className="ml-2 h-5 w-5" />
+                {isLoading ? "Processing..." : "Start Your Audit"} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>
@@ -117,23 +117,27 @@ const ServiceTestDrive = () => {
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>1 custom thumbnail design tailored to your content</span>
+                      <span>3 long-form episodes</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>Comprehensive niche research and competitor analysis</span>
+                      <span>1 thumbnail per episode</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>2 rounds of revisions to perfect your design</span>
+                      <span>2 title options per episode</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>48-hour delivery guarantee</span>
+                      <span>1 revision round per thumbnail</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span>High-resolution files (PNG & JPG) optimized for YouTube</span>
+                      <span>48-hour delivery per thumbnail</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Check className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span>Clear "before vs after" on three key videos</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -164,17 +168,17 @@ const ServiceTestDrive = () => {
         {/* CTA Section */}
         <section className="py-16 bg-primary/5">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Test Drive?</h2>
+            <h2 className="text-3xl font-bold mb-4">Ready to Start Your Audit?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join hundreds of creators who've seen dramatic improvements in their click-through rates with our professional thumbnail designs.
+              See the impact of better packaging with a clear before vs after on three of your key videos.
             </p>
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-4" 
+            <Button
+              size="lg"
+              className="text-lg px-8 py-4"
               onClick={handleOrderClick}
               disabled={isLoading}
             >
-              {isLoading ? "Processing..." : "Order Your Thumbnail Now"} <ArrowRight className="ml-2 h-5 w-5" />
+              {isLoading ? "Processing..." : "Start Your Audit Now"} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </section>

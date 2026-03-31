@@ -9,75 +9,80 @@ const Services = () => {
 
   const services = [
     {
-      name: "Packaging Test",
-      subtitle: "$149",
-      price: 149,
+      name: "Starter Audit",
+      subtitle: "$450 one-time",
+      price: 450,
       effectivePrice: null,
       isOneTime: true,
-      description: "Try our YouTube packaging strategy with one complete project.",
+      description: "For channels that want to test high-quality packaging on real episodes.",
       features: [
-        "1 YouTube packaging concept",
-        "Custom thumbnail design",
-        "2 title direction options",
-        "Niche research",
-        "2 revision rounds",
-        "48 hour delivery"
+        "3 long-form episodes",
+        "1 thumbnail per episode",
+        "2 title options per episode",
+        "1 revision round per thumbnail",
+        "48-hour delivery per thumbnail",
+        "Clear \"before vs after\" results"
       ],
       popular: false,
-      cta: "Start Test",
-      serviceType: "test-drive",
-      learnMoreLink: "/service/test-drive"
+      cta: "Start Your Audit",
+      serviceType: "starter-audit",
+      learnMoreLink: "/service/starter-audit"
     },
     {
-      name: "Creator Plan",
-      subtitle: "$597 / month",
-      price: 597,
-      effectivePrice: "$119 per packaging",
+      name: "Creator Packaging",
+      subtitle: "$1,200 / month",
+      price: 1200,
+      effectivePrice: "$300 per thumbnail",
       isOneTime: false,
-      description: "For consistent creators who need regular packaging strategies.",
+      description: "For creators who want consistent, high-performing thumbnails and titles.",
       features: [
-        "5 packaging designs per month",
-        "Thumbnail + title exploration",
-        "Brand visual alignment",
-        "Priority delivery",
-        "Unlimited revisions"
+        "4 thumbnails per month",
+        "2–3 title options per video",
+        "Light A/B variations on priority episodes",
+        "48-hour turnaround on scheduled uploads",
+        "Async feedback & delivery",
+        "Member add-on rate: 15% off additional thumbnails"
       ],
-      popular: true,
-      cta: "Start Creator Plan",
+      popular: false,
+      cta: "Start Creator Packaging",
       serviceType: "creator-pro",
       learnMoreLink: "/service/creator-pro"
     },
     {
-      name: "Growth Plan",
-      subtitle: "$1,097 / month",
-      price: 1097,
-      effectivePrice: "$109 per packaging",
+      name: "Growth System",
+      subtitle: "$1,500 / month",
+      price: 1500,
+      effectivePrice: "$187.50 per thumbnail",
       isOneTime: false,
-      description: "Scale your channel with strategic packaging and performance analysis.",
+      description: "For channels that want a proper visual system and ongoing optimization.",
       features: [
-        "10 packaging designs per month",
-        "Thumbnail + title strategy",
-        "A/B testing variants",
-        "Monthly performance review",
-        "Priority support"
+        "8 thumbnails per month",
+        "Visual system for the channel (palette, typography, layout rules)",
+        "System guide your team can follow internally",
+        "Structured A/B tests on thumbnails and titles",
+        "Monthly performance review and clear recommendations",
+        "Priority delivery window",
+        "Member add-on rate: 15% off thumbnails beyond 8/month"
       ],
-      popular: false,
-      cta: "Scale My Channel",
+      popular: true,
+      cta: "Get Growth System",
       serviceType: "creator-pro-plus",
       learnMoreLink: "/service/creator-pro-plus"
     },
     {
-      name: "Enterprise Packaging",
-      subtitle: "Custom Quote",
+      name: "Enterprise / White-Label",
+      subtitle: "Custom pricing",
       price: null,
       effectivePrice: null,
       isOneTime: false,
-      description: "For agencies, large YouTube channels, and media teams.",
+      description: "For agencies, networks, and large channels (20+ thumbnails/month).",
       features: [
-        "Dedicated design team",
-        "Packaging audits",
-        "Channel visual systems",
-        "High-volume production"
+        "Starting at 20+ thumbnails per month",
+        "Dedicated design lead and production pod",
+        "Channel and show-level visual systems",
+        "Launch frameworks and audits for new formats",
+        "Priority queue and rapid-response capacity",
+        "White-label option for agencies"
       ],
       popular: false,
       cta: "Contact Us",
@@ -122,7 +127,7 @@ const Services = () => {
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                   <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1">
                     <Zap className="h-3 w-3" />
-                    Most Popular
+                    Recommended
                   </div>
                 </div>
               )}
